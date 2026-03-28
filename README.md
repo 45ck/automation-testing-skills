@@ -92,8 +92,8 @@ LICENSE                              MIT
 
 ## Related workflow agents
 
-- [qa-automation-engineer](https://github.com/45ck/workflow-agents) - Own automation suites, fixtures, and regression strategy
-- [test-designer](https://github.com/45ck/workflow-agents) - Feed strong test design into automation work
+- [qa-automation-engineer](https://github.com/45ck/skill-harness) - Own automation suites, fixtures, and regression strategy
+- [test-designer](https://github.com/45ck/skill-harness) - Feed strong test design into automation work
 
 ## Related skill packs
 
