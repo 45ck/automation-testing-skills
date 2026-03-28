@@ -1,0 +1,166 @@
+{
+  "name": "automation-testing-pack",
+  "version": "0.1.0",
+  "type": "skill-pack",
+  "summary": "Automation testing pack for Claude Code-style workflows.",
+  "recommended_order": [
+    "unit-test-writer",
+    "integration-test-writer",
+    "api-test-suite-builder",
+    "ui-test-scenario-writer",
+    "selenium-scenario-designer",
+    "webdriver-flow-writer",
+    "fixture-and-test-data-builder",
+    "mock-vs-stub-selector",
+    "regression-suite-curator",
+    "flaky-test-investigator",
+    "test-isolation-reviewer",
+    "test-readability-reviewer",
+    "test-maintainability-auditor"
+  ],
+  "skills": [
+    {
+      "id": "unit-test-writer",
+      "path": "skills/unit-test-writer/SKILL.md",
+      "purpose": "Design focused unit tests around single behaviors, branches, and contracts with clear setup, action, and assertion structure.",
+      "handoffs": [
+        "mock-vs-stub-selector",
+        "fixture-and-test-data-builder",
+        "test-oracle-writer if present"
+      ]
+    },
+    {
+      "id": "integration-test-writer",
+      "path": "skills/integration-test-writer/SKILL.md",
+      "purpose": "Design integration tests that verify components collaborate correctly across boundaries such as services, databases, filesystems, or queues.",
+      "handoffs": [
+        "fixture-and-test-data-builder",
+        "api-test-suite-builder",
+        "regression-suite-curator"
+      ]
+    },
+    {
+      "id": "api-test-suite-builder",
+      "path": "skills/api-test-suite-builder/SKILL.md",
+      "purpose": "Create an API-focused test suite covering contract correctness, status codes, payload validation, auth, and error handling.",
+      "handoffs": [
+        "fixture-and-test-data-builder",
+        "test-isolation-reviewer",
+        "regression-suite-curator"
+      ]
+    },
+    {
+      "id": "ui-test-scenario-writer",
+      "path": "skills/ui-test-scenario-writer/SKILL.md",
+      "purpose": "Define end-to-end UI automation scenarios around real user goals, key paths, validation behavior, and important regressions.",
+      "handoffs": [
+        "fixture-and-test-data-builder",
+        "webdriver-flow-writer",
+        "regression-suite-curator"
+      ]
+    },
+    {
+      "id": "selenium-scenario-designer",
+      "path": "skills/selenium-scenario-designer/SKILL.md",
+      "purpose": "Translate browser interaction goals into Selenium-style scenarios with robust selectors, waits, and observable assertions.",
+      "handoffs": [
+        "webdriver-flow-writer",
+        "flaky-test-investigator",
+        "test-isolation-reviewer"
+      ]
+    },
+    {
+      "id": "webdriver-flow-writer",
+      "path": "skills/webdriver-flow-writer/SKILL.md",
+      "purpose": "Write browser automation flows that sequence actions and assertions clearly while minimizing brittle waits and hidden assumptions.",
+      "handoffs": [
+        "selenium-scenario-designer",
+        "flaky-test-investigator",
+        "ui-test-scenario-writer"
+      ]
+    },
+    {
+      "id": "fixture-and-test-data-builder",
+      "path": "skills/fixture-and-test-data-builder/SKILL.md",
+      "purpose": "Design fixtures and test data that make scenarios reproducible, minimal, realistic enough, and easy to maintain.",
+      "handoffs": [
+        "unit-test-writer",
+        "integration-test-writer",
+        "api-test-suite-builder"
+      ]
+    },
+    {
+      "id": "mock-vs-stub-selector",
+      "path": "skills/mock-vs-stub-selector/SKILL.md",
+      "purpose": "Choose an appropriate use of mocks, stubs, fakes, spies, or real collaborators based on the risk and purpose of the test.",
+      "handoffs": [
+        "unit-test-writer",
+        "test-isolation-reviewer",
+        "test-maintainability-auditor"
+      ]
+    },
+    {
+      "id": "regression-suite-curator",
+      "path": "skills/regression-suite-curator/SKILL.md",
+      "purpose": "Select, organize, and prune a regression suite so it remains fast, meaningful, and aligned to product risk.",
+      "handoffs": [
+        "flaky-test-investigator",
+        "test-maintainability-auditor",
+        "integration-test-writer"
+      ]
+    },
+    {
+      "id": "flaky-test-investigator",
+      "path": "skills/flaky-test-investigator/SKILL.md",
+      "purpose": "Analyze why an automated test is unstable and propose practical fixes around timing, ordering, environment, data, or assertions.",
+      "handoffs": [
+        "test-isolation-reviewer",
+        "webdriver-flow-writer",
+        "regression-suite-curator"
+      ]
+    },
+    {
+      "id": "test-isolation-reviewer",
+      "path": "skills/test-isolation-reviewer/SKILL.md",
+      "purpose": "Review whether tests can run independently without hidden ordering, shared mutable state, or environmental bleed-through.",
+      "handoffs": [
+        "fixture-and-test-data-builder",
+        "mock-vs-stub-selector",
+        "test-maintainability-auditor"
+      ]
+    },
+    {
+      "id": "test-readability-reviewer",
+      "path": "skills/test-readability-reviewer/SKILL.md",
+      "purpose": "Review automated tests for clarity of intent, naming, setup noise, assertion quality, and ease of diagnosis.",
+      "handoffs": [
+        "test-maintainability-auditor",
+        "unit-test-writer",
+        "regression-suite-curator"
+      ]
+    },
+    {
+      "id": "test-maintainability-auditor",
+      "path": "skills/test-maintainability-auditor/SKILL.md",
+      "purpose": "Audit the long-term maintainability of a test suite, including duplication, brittleness, overcoupling, and poor abstractions.",
+      "handoffs": [
+        "regression-suite-curator",
+        "test-readability-reviewer",
+        "mock-vs-stub-selector"
+      ]
+    }
+  ],
+  "templates": [
+    "unit-test-template.md",
+    "integration-test-template.md",
+    "api-test-matrix-template.csv",
+    "ui-scenario-template.md",
+    "fixture-template.md",
+    "selector-strategy-template.md",
+    "regression-tier-template.csv",
+    "flake-diagnosis-template.md",
+    "test-review-checklist.md",
+    "traceability-template.csv"
+  ],
+  "example_flow": "examples/sample-flow.md"
+}
