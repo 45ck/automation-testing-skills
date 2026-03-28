@@ -90,6 +90,11 @@ uninstall.sh                         global uninstaller
 LICENSE                              MIT
 ```
 
+## Related workflow agents
+
+- [qa-automation-engineer](https://github.com/45ck/workflow-agents) - Own automation suites, fixtures, and regression strategy
+- [test-designer](https://github.com/45ck/workflow-agents) - Feed strong test design into automation work
+
 ## Related skill packs
 
 - [business-analysis-skills](https://github.com/45ck/business-analysis-skills) - Business analysis techniques, workflows, and quality checks
